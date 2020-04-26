@@ -56,4 +56,21 @@ $(document).ready(function() {
       this.classList.toggle('opened');
     });
   })();
-  
+
+
+  $("#phone").mask("+7(999) 999-99-99");
+  $("#phone1").mask("+7(999) 999-99-99");
+
+
+
+  $(".nav-toggle").click(function() {
+    $(this).toggleClass("open");
+    $(".menu-adaptive").slideToggle();
+    $("body").toggleClass("js-overflow");
+  });
+
+  $('#myTab .save').click(function (e) {
+    e.preventDefault();
+    $('#myTab').modal('hide');
+    return false;
+})

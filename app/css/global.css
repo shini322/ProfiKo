@@ -30,7 +30,7 @@ button{display:block; cursor:pointer; box-sizing:border-box; padding:0;}
 #wrapper{width:100%; height:auto; margin:0 auto; position:relative; min-height:100%;overflow: hidden;}
 .container{width: 100%; margin: 0 auto;padding: 0 15px; position: relative;}
 
-.nav-toggle {display: none; position: absolute;background: transparent;border: 1px solid transparent;z-index: 4;right: 15px;top: 15px;}
+.nav-toggle {display: none; position: absolute;background: transparent;border: 1px solid transparent;z-index: 4;right: 15px;top: 27px;}
 .nav-toggle:focus {outline-width: 0;}
 .nav-toggle [class*='bar-'] { background: #11abf2; display: block;-webkit-transform: rotate(0deg);transform: rotate(0deg);-webkit-transition: .2s all;transition: .2s  all;height: 5px;width: 30px;margin-bottom: 4px;}
 .nav-toggle .bar-bot {margin-bottom: 0;}

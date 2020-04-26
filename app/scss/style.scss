@@ -7,36 +7,36 @@
 @font-face {
     font-family: 'Circe';
     src: local('Circe ExtraBold'), local('Circe-ExtraBold'),
-        url('/app/fonts/Circe-ExtraBold.woff2') format('woff2'),
-        url('/app/fonts/Circe-ExtraBold.woff') format('woff'),
-        url('/app/fonts/Circe-ExtraBold.ttf') format('truetype');
+        url('../fonts/Circe-ExtraBold.woff2') format('woff2'),
+        url('../fonts/Circe-ExtraBold.woff') format('woff'),
+        url('../fonts/Circe-ExtraBold.ttf') format('truetype');
     font-weight: 800;
     font-style: normal;
 }
 @font-face {
     font-family: 'Circe';
     src: local('Circe Bold'), local('Circe-Bold'),
-        url('/app/fonts/Circe-Bold.woff2') format('woff2'),
-        url('/app/fonts/Circe-Bold.woff') format('woff'),
-        url('/app/fonts/Circe-Bold.ttf') format('truetype');
+        url('../fonts/Circe-Bold.woff2') format('woff2'),
+        url('../fonts/Circe-Bold.woff') format('woff'),
+        url('../fonts/Circe-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
  @font-face {
     font-family: 'Circe';
     src: local('Circe Regular'), local('Circe-Regular'),
-        url('/app/fonts/Circe-Regular.woff2') format('woff2'),
-        url('/app/fonts/Circe-Regular.woff') format('woff'),
-        url('/app/fonts/Circe-Regular.ttf') format('truetype');
+        url('../fonts/Circe-Regular.woff2') format('woff2'),
+        url('../fonts/Circe-Regular.woff') format('woff'),
+        url('../fonts/Circe-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Circe';
     src: local('Circe Light'), local('Circe-Light'),
-        url('/app/fonts/Circe-Light.woff2') format('woff2'),
-        url('/app/fonts/Circe-Light.woff') format('woff'),
-        url('/app/fonts/Circe-Light.ttf') format('truetype');
+        url('../fonts/Circe-Light.woff2') format('woff2'),
+        url('../fonts/Circe-Light.woff') format('woff'),
+        url('../fonts/Circe-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
@@ -445,7 +445,7 @@ $blue: #11abf2;
         height: 100%;
         width: 100%;
         display: block;
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
     }
@@ -462,6 +462,9 @@ $blue: #11abf2;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    &__orange{
+        color: $orange;
+    }
     
 }
 .timer{
@@ -546,7 +549,6 @@ $blue: #11abf2;
         padding-bottom: 40px;
     }
     &__img-block{
-        width: 570px;
         height: 469px;
         border-radius: 5px;
     }
@@ -803,7 +805,7 @@ $blue: #11abf2;
         text-decoration: underline;
         font-size: 12px;
         font-family: 'Montserrat', sans-serif;
-        margin-right: 30px;
+        margin-right: 25px;
     }
     &__block{
         display: flex;
@@ -878,7 +880,7 @@ $blue: #11abf2;
     transition: none;
     padding: 15px;
     padding-top: 45px;
-    transition: .15s;
+    display: none;
     > ul{
         flex-direction: column;
     }
@@ -965,6 +967,8 @@ $blue: #11abf2;
     .call-master{
         &__worker{
             top: -57px;
+            width: 415px;
+            height: 660px;
         }
     }
     .price-list{
@@ -996,11 +1000,24 @@ $blue: #11abf2;
         }
     }
     .footer{
+        &__block{
+            flex-wrap: wrap;
+        }
         &__menu{
-            display: none;
+            order: 3;
+            width: 100%;
+            margin-top: 20px;
+            >ul{
+               >li{
+                    margin: 0 auto;
+               }
+            }
         }
         &__confidentiality{
-            display: none;
+            order: 4;
+            width: 100%;
+            text-align: center;
+            margin-right: 0;
         }
     }
     .call-master{
@@ -1045,12 +1062,8 @@ $blue: #11abf2;
             display: block;
             width: 100%;
         }
-        &__img-block-payment{
-            height: 50px;
-        }
-        &__img-payment{
-            background-size: contain;
-        }
+        
+        
         &__tab-nav{
             width: 100%;
                 display: block;
@@ -1082,14 +1095,16 @@ $blue: #11abf2;
         }
     }
     .timer-section{
-        background-position-x: left;
-        &__block{
-            background-color: rgba(104, 104, 104, 0.5);
-        }
+        background-image: none;
+        background-color: #f0f0ed;
+        
     }
     .about{
         &__img-block{
             margin: 0 auto 30px;
+        }
+        &__img{
+            object-fit: fill;
         }
     }
     .reviews{
@@ -1098,6 +1113,11 @@ $blue: #11abf2;
         }
         &__img-block{
             height: 330px;
+        }
+    }
+    .map{
+        iframe{
+            max-width: 100%;
         }
     }
     
@@ -1160,9 +1180,7 @@ $blue: #11abf2;
     }
     .timer-section{
         background-position-x: left;
-        &__block{
-            background-color: rgba(104, 104, 104, 0.5);
-        }
+        
         &__info{
             display: block;
         }
@@ -1213,9 +1231,7 @@ $blue: #11abf2;
         &__img{
             border-radius: 5px;
         }
-        .slick-arrow{
-            display: none;
-        }        
+              
     }
    
 }
@@ -1276,6 +1292,37 @@ $blue: #11abf2;
             font-size: 12px;
         }
     }
+    .reviews {
+        .slick-arrow{
+            width: 30px;
+            height: 30px;
+        }
+        .slick-prev{
+            left: -10px;
+            margin-top: -30px;
+        }
+        .slick-next{
+            right: -10px;
+            margin-top: -30px;
+        }
+    }
+    .contacs{
+        &__input{
+            width: 100%;
+        }
+        &__input + &__input{
+            margin-left: 0;
+            margin-top: 10px;
+        }
+        &__button{
+            width: 100%;
+        }
+        &__agreement{
+            text-align: center;
+            margin-left: 0;
+            width: 100%;
+        }
+    }
     
 
 }
@@ -1286,9 +1333,37 @@ $blue: #11abf2;
         }
     }
     .footer{
-        &__call-block{
-            display: none;
+        &__logo{
+            width: 100%;
+            margin: 0 auto;
         }
+        &__call-block{
+            width: 100%;
+            max-width: none;
+           
+        }
+        &__call{
+            margin: 20px auto 0;
+            display: block;
+            width: 100%;
+        }
+        &__menu{
+            >ul{
+                display: block;
+                >li{
+                    text-align: center;
+                    
+                }
+                li + li{
+                    padding-top: 10px;
+                    >a{
+                        padding-left: 0;
+                        
+                    }
+                }
+            }
+        }
+        
     }
     .menu-adaptive{
         &__call-block{
@@ -1309,17 +1384,20 @@ $blue: #11abf2;
             font-size: 16px;
         }
         &__input{
-            height: 30px;
+            height: 35px;
+            width: 100%;
+            max-width: none;
         }
         &__button{
             margin-left: 0;
             margin-top: 10px;
             height: 30px;
             padding: 5px 20px;
+            width: 100%;
         }
     }
     .title{
-        font-size: 28px;
+        font-size: 25px;
         padding-top: 65px;
         padding-bottom: 5px;
     }
@@ -1331,7 +1409,11 @@ $blue: #11abf2;
             width: 100%;
         }
         &__table-payment &__tr{
-            width: 100%;
+            padding: 0;
+        }
+        &__tabs-item{
+            padding: 15px 20px;
+            height: auto;
         }
     }
     .timer-section{
@@ -1381,6 +1463,14 @@ $blue: #11abf2;
         &__slider{
             padding-bottom: 0;
         }
+        &__button{
+            width: 100%;
+            padding: 10px 15px;
+            height: auto;
+        }
+    }
+    .footer{
+
     }
     
     

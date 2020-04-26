@@ -611,28 +611,28 @@ template {
 
 @font-face {
   font-family: 'Circe';
-  src: local("Circe ExtraBold"), local("Circe-ExtraBold"), url("/app/fonts/Circe-ExtraBold.woff2") format("woff2"), url("/app/fonts/Circe-ExtraBold.woff") format("woff"), url("/app/fonts/Circe-ExtraBold.ttf") format("truetype");
+  src: local("Circe ExtraBold"), local("Circe-ExtraBold"), url("../fonts/Circe-ExtraBold.woff2") format("woff2"), url("../fonts/Circe-ExtraBold.woff") format("woff"), url("../fonts/Circe-ExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Circe';
-  src: local("Circe Bold"), local("Circe-Bold"), url("/app/fonts/Circe-Bold.woff2") format("woff2"), url("/app/fonts/Circe-Bold.woff") format("woff"), url("/app/fonts/Circe-Bold.ttf") format("truetype");
+  src: local("Circe Bold"), local("Circe-Bold"), url("../fonts/Circe-Bold.woff2") format("woff2"), url("../fonts/Circe-Bold.woff") format("woff"), url("../fonts/Circe-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Circe';
-  src: local("Circe Regular"), local("Circe-Regular"), url("/app/fonts/Circe-Regular.woff2") format("woff2"), url("/app/fonts/Circe-Regular.woff") format("woff"), url("/app/fonts/Circe-Regular.ttf") format("truetype");
+  src: local("Circe Regular"), local("Circe-Regular"), url("../fonts/Circe-Regular.woff2") format("woff2"), url("../fonts/Circe-Regular.woff") format("woff"), url("../fonts/Circe-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Circe';
-  src: local("Circe Light"), local("Circe-Light"), url("/app/fonts/Circe-Light.woff2") format("woff2"), url("/app/fonts/Circe-Light.woff") format("woff"), url("/app/fonts/Circe-Light.ttf") format("truetype");
+  src: local("Circe Light"), local("Circe-Light"), url("../fonts/Circe-Light.woff2") format("woff2"), url("../fonts/Circe-Light.woff") format("woff"), url("../fonts/Circe-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
@@ -1077,7 +1077,7 @@ template {
   height: 100%;
   width: 100%;
   display: block;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -1095,6 +1095,10 @@ template {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.timer-section__orange {
+  color: #ff9000;
 }
 
 .timer {
@@ -1195,7 +1199,6 @@ template {
 }
 
 .about__img-block {
-  width: 570px;
   height: 469px;
   border-radius: 5px;
 }
@@ -1491,7 +1494,7 @@ template {
   text-decoration: underline;
   font-size: 12px;
   font-family: 'Montserrat', sans-serif;
-  margin-right: 30px;
+  margin-right: 25px;
 }
 
 .footer__block {
@@ -1577,7 +1580,7 @@ template {
   transition: none;
   padding: 15px;
   padding-top: 45px;
-  transition: .15s;
+  display: none;
 }
 
 .menu-adaptive > ul {
@@ -1664,6 +1667,8 @@ template {
   }
   .call-master__worker {
     top: -57px;
+    width: 415px;
+    height: 660px;
   }
   .price-list__tabs-item {
     padding-right: 49px;
@@ -1687,11 +1692,22 @@ template {
   .header .nav-toggle {
     display: block;
   }
+  .footer__block {
+    flex-wrap: wrap;
+  }
   .footer__menu {
-    display: none;
+    order: 3;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .footer__menu > ul > li {
+    margin: 0 auto;
   }
   .footer__confidentiality {
-    display: none;
+    order: 4;
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
   }
   .call-master {
     padding: 130px 0 170px;
@@ -1731,12 +1747,6 @@ template {
     display: block;
     width: 100%;
   }
-  .price-list__img-block-payment {
-    height: 50px;
-  }
-  .price-list__img-payment {
-    background-size: contain;
-  }
   .price-list__tab-nav {
     width: 100%;
     display: block;
@@ -1765,19 +1775,23 @@ template {
     margin: 20px auto;
   }
   .timer-section {
-    background-position-x: left;
-  }
-  .timer-section__block {
-    background-color: rgba(104, 104, 104, 0.5);
+    background-image: none;
+    background-color: #f0f0ed;
   }
   .about__img-block {
     margin: 0 auto 30px;
+  }
+  .about__img {
+    object-fit: fill;
   }
   .reviews__slider-item {
     margin-bottom: 30px;
   }
   .reviews__img-block {
     height: 330px;
+  }
+  .map iframe {
+    max-width: 100%;
   }
 }
 
@@ -1832,9 +1846,6 @@ template {
   .timer-section {
     background-position-x: left;
   }
-  .timer-section__block {
-    background-color: rgba(104, 104, 104, 0.5);
-  }
   .timer-section__info {
     display: block;
   }
@@ -1877,9 +1888,6 @@ template {
   }
   .reviews__img {
     border-radius: 5px;
-  }
-  .reviews .slick-arrow {
-    display: none;
   }
 }
 
@@ -1929,14 +1937,63 @@ template {
   .map__info {
     font-size: 12px;
   }
+  .reviews .slick-arrow {
+    width: 30px;
+    height: 30px;
+  }
+  .reviews .slick-prev {
+    left: -10px;
+    margin-top: -30px;
+  }
+  .reviews .slick-next {
+    right: -10px;
+    margin-top: -30px;
+  }
+  .contacs__input {
+    width: 100%;
+  }
+  .contacs__input + .contacs__input {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .contacs__button {
+    width: 100%;
+  }
+  .contacs__agreement {
+    text-align: center;
+    margin-left: 0;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 500px) {
   .header__call-block {
     display: none;
   }
+  .footer__logo {
+    width: 100%;
+    margin: 0 auto;
+  }
   .footer__call-block {
-    display: none;
+    width: 100%;
+    max-width: none;
+  }
+  .footer__call {
+    margin: 20px auto 0;
+    display: block;
+    width: 100%;
+  }
+  .footer__menu > ul {
+    display: block;
+  }
+  .footer__menu > ul > li {
+    text-align: center;
+  }
+  .footer__menu > ul li + li {
+    padding-top: 10px;
+  }
+  .footer__menu > ul li + li > a {
+    padding-left: 0;
   }
   .menu-adaptive__call-block {
     display: flex;
@@ -1956,16 +2013,19 @@ template {
     font-size: 16px;
   }
   .call-master__input {
-    height: 30px;
+    height: 35px;
+    width: 100%;
+    max-width: none;
   }
   .call-master__button {
     margin-left: 0;
     margin-top: 10px;
     height: 30px;
     padding: 5px 20px;
+    width: 100%;
   }
   .title {
-    font-size: 28px;
+    font-size: 25px;
     padding-top: 65px;
     padding-bottom: 5px;
   }
@@ -1976,7 +2036,11 @@ template {
     width: 100%;
   }
   .price-list__table-payment .price-list__tr {
-    width: 100%;
+    padding: 0;
+  }
+  .price-list__tabs-item {
+    padding: 15px 20px;
+    height: auto;
   }
   .timer-section__block {
     padding: 30px 20px;
@@ -2019,6 +2083,11 @@ template {
   }
   .reviews__slider {
     padding-bottom: 0;
+  }
+  .reviews__button {
+    width: 100%;
+    padding: 10px 15px;
+    height: auto;
   }
 }
 

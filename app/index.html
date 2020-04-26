@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/global.css">
-    
-    <link rel="stylesheet" href="css/vendor.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -74,7 +73,7 @@
                             <p class="call-master__info">Отремонтируем любую поломку в течение <span class="call-master__info call-master__info--blue">3 часов</span></p>
 
                             <form action="" class="call-master__form">
-                                <input type="text" class="call-master__input" placeholder="Введите Ваш номер">
+                                <input type="text" class="call-master__input" id="phone" placeholder="Введите Ваш номер">
                                 <button class="call-button call-master__button">Вызвать мастера</button>
                             </form>
                         </div>
@@ -203,7 +202,7 @@
                                     </tr>
                                     <tr class="price-list__tr">
                                         <td class="price-list__td price-list__td-tabs">
-                                            <a class="price-list__tabs-item nav-link" id="husband-tab" data-toggle="pill" href="#husband" role="tab" aria-controls="husband" aria-selected="flase">
+                                            <a class="price-list__tabs-item nav-link" id="husband-tab" data-toggle="tab" href="#husband" role="tab" aria-controls="husband" aria-selected="flase">
                                                 <img src="images/table/tabs-icon3.png" alt="" class="price-list__td-icon">
                                                 <span class="price-list__tabs-title">Муж на час</span>
                                             </a>
@@ -271,7 +270,7 @@
                                         </tr>
                                         
                                     </table>
-                                    <table class="price-list__table  price-list__tab-content active tab-pane fade show"  id="electrician" role="tabpanel" aria-labelledby="electrician-tab" >
+                                    <table class="price-list__table  price-list__tab-content active tab-pane fade"  id="electrician" role="tabpanel" aria-labelledby="electrician-tab" >
                                         <tr class="price-list__tr">
                                             <td class="price-list__td">Наименование услуги</td>
                                             <td class="price-list__td">Стоимость</td>
@@ -330,7 +329,7 @@
                                         
                                         
                                     </table>
-                                    <table class="price-list__table  price-list__tab-content tab-pane fade show" id="husband" role="tabpanel" aria-labelledby="husband-tab">
+                                    <table class="price-list__table  price-list__tab-content tab-pane fade" id="husband" role="tabpanel" aria-labelledby="husband-tab">
                                         <tr class="price-list__tr">
                                             <td class="price-list__td">Наименование услуги</td>
                                             <td class="price-list__td">Стоимость</td>
@@ -394,7 +393,7 @@
                                     Просмотреть все услуги
                                 </button>
                             </div>
-                            <div class="col-lg-1">
+                            <div class="col-lg-1 p-0">
                                 <table class="price-list__table price-list__table-payment">
                                     <tr class="price-list__tr">
                                         <td class="price-list__td">
@@ -766,14 +765,14 @@
                             <p class="contacs__text">Задайте нам вопрос</p>
                             <form action="" class="contacs__form">
                                 <input type="text" class="contacs__input" placeholder="Ваше имя">
-                                <input type="text" class="contacs__input" placeholder="Ваш телефон">
+                                <input type="text" class="contacs__input" id="phone1" placeholder="Ваш телефон">
                                 <textarea name="" id="" cols="30" rows="10" class="contacs__textarea" placeholder="Ваш комментарий"></textarea>
                                 <button class="call-button contacs__button">Отправить</button>
                                 <p class="contacs__agreement">Нажимая кнопку “Отправить” Вы соглашаетесь <br> 
                                     на обработку Ваших данных</p>
                             </form>
                         </div>
-                        <div class="col-lg-6 pr-0">
+                        <div class="col-lg-6">
                             <div class="map">
                                 <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3f83df99caa12c0dc23511747a9c2c0e26fe8b84bb66b957c5f7e3a394daccd5&amp;source=constructor" width="966" height="471" frameborder="0"></iframe>
                                 <div class="map__info">До 7 км от границы города выезд бесплатный, от 7км до 30км <br>
@@ -819,10 +818,11 @@
     
     <!--end footer-->
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/libs.min.js"></script>
-    <script src="js/jquery.downCount.js"></script>
-    <script src="js/flipdown.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/libs.min.js"></script>
+    <script src="js/flipdown.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
